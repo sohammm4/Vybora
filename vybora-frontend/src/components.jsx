@@ -2,9 +2,22 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { art, fd, fp } from './data';
 import { useSaved, toggle } from './saved';
+import { useAuth } from './contexts/AuthContext';
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch {
+      // silently handle
+    }
+  };
+
+  const displayName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
+
   return (
     <nav>
       <Link className="logo" to="/"><i />VYBORA</Link>
@@ -15,6 +28,12 @@ export function Nav() {
         <a href="/#how">How It Works</a>
         <Link to="/saved">Saved</Link>
         <Link className="btn pr" to="/explore" style={{ padding: '6px 14px' }}>Get Started</Link>
+        {user && (
+          <div className="nav-user">
+            <span className="nav-user-name" title={user.email}>👤 {displayName}</span>
+            <button className="nav-logout" onClick={handleSignOut}>Sign Out</button>
+          </div>
+        )}
       </div>
     </nav>
   );

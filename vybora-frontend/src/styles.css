@@ -44,3 +44,32 @@ footer{border-top:1px solid var(--bd);padding:32px 24px;color:var(--mu);font-siz
 #tg{display:flex;position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:30;background:var(--s2);border:1px solid var(--bd);border-radius:99px;padding:4px}#tg button{border:0;background:none;padding:9px 18px;border-radius:99px;cursor:pointer}#tg .on{background:var(--p)}.dg{grid-template-columns:1fr}}
 @media(max-width:800px){.event-map{min-height:calc(100dvh - 58px)}.event-map-summary{bottom:74px}.event-map-summary>img{width:88px}.event-map-count{top:14px;left:14px}.det{padding:16px}.dh{height:230px;padding:18px}.event-map.compact{min-height:260px}}
 @media(max-width:600px){.welcome-page{padding:18px 14px}.welcome-card{padding:24px 18px;border-radius:18px}.welcome-brand{margin-bottom:32px}.welcome-features{grid-template-columns:1fr;margin:22px 0}.welcome-features div{grid-template-columns:34px 1fr;align-items:center;padding:12px}.welcome-location{align-items:stretch;flex-direction:column}.welcome-location-button{justify-content:center}.welcome-provider{padding:0 12px}}
+
+
+/* ── Login / Auth Styles ── */
+.login-page{min-height:100dvh;display:grid;place-items:center;padding:36px 20px;background:radial-gradient(60% 55% at 50% 0,rgba(139,92,246,.25),transparent 75%),var(--bg)}
+.login-card{width:min(100%,480px);padding:clamp(28px,5vw,52px);border:1px solid var(--bd);border-radius:24px;background:rgba(16,14,24,.94);box-shadow:0 28px 90px rgba(0,0,0,.35)}
+.login-card h1{margin:10px 0 16px;font-size:clamp(32px,6vw,52px);line-height:1.08;letter-spacing:-.04em}
+.login-card h1 span{background:linear-gradient(90deg,var(--p2),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.login-subtitle{color:var(--mu);font-size:15px;margin:0 0 24px;line-height:1.5}
+.login-form{display:grid;gap:18px}
+.login-field{display:grid;gap:6px}
+.login-field label{font-size:13px;font-weight:600;color:var(--mu);letter-spacing:.04em}
+.login-field input{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;font-size:15px;transition:border-color .2s}
+.login-field input:focus{border-color:var(--p);outline:none;box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+.login-field input::placeholder{color:rgba(154,148,179,.45)}
+.login-submit{width:100%;justify-content:center;padding:14px 18px;font-size:16px;margin-top:4px;border-radius:12px}
+.login-submit:disabled{opacity:.6;cursor:wait}
+.login-error{padding:12px 14px;border-radius:10px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:#fca5a5;font-size:13px;margin-bottom:8px}
+.login-success{padding:12px 14px;border-radius:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86efac;font-size:13px;margin-bottom:8px}
+.login-divider{display:flex;align-items:center;gap:16px;margin:24px 0}.login-divider::before,.login-divider::after{content:"";flex:1;height:1px;background:var(--bd)}.login-divider span{color:var(--mu);font-size:13px;white-space:nowrap}
+.login-switch{display:block;width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;background:transparent;color:var(--p2);cursor:pointer;font-size:14px;font-weight:600;transition:background .2s,border-color .2s}
+.login-switch:hover{background:rgba(139,92,246,.08);border-color:var(--p)}
+
+/* ── Nav User ── */
+.nav-user{display:flex;align-items:center;gap:12px;margin-left:8px;padding-left:16px;border-left:1px solid var(--bd)}
+.nav-user-name{color:var(--mu);font-size:13px;font-weight:600;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav-logout{background:none;border:1px solid var(--bd);border-radius:8px;padding:5px 12px;color:var(--mu);cursor:pointer;font-size:12px;font-weight:600;transition:color .2s,border-color .2s}
+.nav-logout:hover{color:var(--pk);border-color:var(--pk)}
+@media(max-width:800px){.nav-user{margin-left:0;padding-left:0;border-left:0;padding-top:12px;border-top:1px solid var(--bd)}}
+@media(max-width:600px){.login-page{padding:18px 14px}.login-card{padding:24px 18px;border-radius:18px}}
